@@ -1,12 +1,14 @@
 import React from 'react';
 import { Text,Image, View,StyleSheet,ImageBackground,Dimensions } from 'react-native';
+import {RadioGroup,RadioButton} from "react-native-flexi-radio-button"
 const {width,height}=Dimensions.get('window');
 import Input from '../components/Input';
+import Button from '../components/Button';
 
-const title='WellCome!';
-const tip='Login to countinue App';
-const singup ='New user? Sign up';
-const terms='By signing up you indicate that you haver read and agreed the the Patch Terms of Service';
+const title='Chào mừng';
+const tip='Đăng nhập để sử dụng ';
+const signup ='Người dùng mới? Đăng ký';
+const terms='Bằng cách đăng ký, bạn cho thấy rằng bạn đã đọc và đồng ý với Điều khoản dịch vụ của chúng tôi';
 const Login = ({
     params,
 }) => (
@@ -26,10 +28,35 @@ const Login = ({
             <Text style={styles.tipText}>{tip}</Text>
         </View>
         <View style={styles.input}>
-            <Input icon={require=('../../assets/images/mail-icon.png')} placeholder='Email address'/>
+            <Input icon={require=('../../assets/images/mail-icon.png')} 
+                placeholder='Nhập số điện thoại'/>
             <View style={{paddingTop:18}}/>
-            <Input icon={require=('../../assets/images/lock-icon.png')} placeholder='Password' password/>
+            <Input 
+                icon={require=('../../assets/images/lock-icon.png')} 
+                placeholder='Nhập mật khẩu' 
+                password/>
         </View>
+        <View style={styles.remember}>
+            <View>
+                <RadioGroup size={16} thickness={2} color='#FFFFFF'>
+                    <RadioButton color='#FFFFFF' value={''}>
+                        <Text style={styles.rememberText}>Ghi nhớ tôi</Text>
+                    </RadioButton>
+                </RadioGroup>
+            </View>
+                <View style={{}}>
+                    <Text style={styles.forgotText}>Quên mật khẩu ?</Text>
+                </View>
+            </View>
+            <View style={{marginTop:25,justifyContent:'center',alignItems:'center'}}>
+                <Button text='Đăng nhập'/>
+            </View>
+            <View style={styles.signup}>
+                <Text style={styles.signupText}>{signup}</Text>
+            </View>
+            <View style={styles.terms}>
+                <Text style={styles.termsText}>{terms}</Text>
+            </View>
         </ImageBackground>
     </View>
 );
@@ -76,6 +103,50 @@ const styles = StyleSheet.create({
         marginTop:20,
         justifyContent:'center',
         alignItems:'center'
+    },
+    remember:{
+        marginTop:10,
+        marginLeft:25,
+        marginRight:30,
+        flexDirection:'row',
+        justifyContent:'space-between',
+        alignItems:'center',
+        opacity:0.8
+    },
+    rememberText:{
+        color:'#FFFFFF',
+        fontFamily:'Nunito-SemiBold',
+        fontSize:12,
+    },
+    forgotText:{
+        color:'#FFFFFF',
+        fontFamily:'Nunito-SemiBold',
+        fontSize:12,
+    },
+    signup:{
+        marginTop:90,
+        justifyContent:'center',
+        alignItems:'center',
+    },
+    signupText:{
+        color:'#FF9F1C',
+        fontFamily:'Nunito-SemiBold',
+        fontSize:12
+    },
+    terms:{
+        marginTop:20,
+        marginRight:80,
+        marginLeft:80,
+        justifyContent:'center',
+        alignItems:'center'
+    },
+    termsText:{
+        color:'#FF9F1C',
+        fontFamily:'Nunito-SemiBold',
+        fontSize:12,
+        alignItems:'center',
+        justifyContent:'center',
+        textAlign:'center'
     }
 });
 export default Login;

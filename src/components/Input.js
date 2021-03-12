@@ -18,8 +18,8 @@ const input = ({
 
 const styles = StyleSheet.create({
     container:{
-        width:width-60,
-        height:40,
+        width:width-45,
+        height:45,
         backgroundColor:'#FFFFFF',
         borderRadius:8,
         flexDirection:'row',

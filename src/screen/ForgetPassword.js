@@ -5,7 +5,7 @@ import Input from '../components/Input';
 import Button from '../components/Button';
 
 const title='Quên mật khẩu';
-const tip='Một tin nhắn văn bản với mã xác minh 4 chữ số vừa được gửi tới +84 xxx xxx xx91';
+const tip='Vui lòng nhập mật khẩu mới và xác nhận mật khẩu';
 
 const ForgetPassword = ({
     params,
@@ -17,22 +17,29 @@ const ForgetPassword = ({
         >
         <View style={styles.darklayer}/>
         <View  style={styles.logo}>
-            <Image source={require('../../assets/images/logo.png')}/>
+            <Image 
+                source={require('../../assets/images/logo.png')}/>
         </View>
         <View style={styles.title}>
-            <Text style={styles.titleText}>{title}</Text>
+            <Text 
+                style={styles.titleText}>{title}</Text>
         </View>
         <View style={styles.tip}>
             <Text style={styles.tipText}>{tip}</Text>
         </View>
         <View style={styles.input}>
             <Input 
-            icon={require=('../../assets/images/code-icon.png')} 
-            placeholder='Code' 
-            password/>
+                icon={require=('../../assets/images/lock-icon.png')} 
+                placeholder='Mật khẩu mới' 
+                password/>
+            <View style={{paddingTop:18}}/>
+            <Input 
+                icon={require=('../../assets/images/lock-icon.png')} 
+                placeholder='Xác nhận mật khẩu' 
+                password/>
         </View>
             <View style={{marginTop:25,justifyContent:'center',alignItems:'center'}}>
-                <Button text='Tiến hành'/>
+                <Button text='Gửi đi'/>
             </View>
         </ImageBackground>
     </View>
@@ -66,10 +73,10 @@ const styles = StyleSheet.create({
         fontFamily:'Nunito-ExtraBold',
     },
     tip:{
-        marginLeft:30,
-        marginRight:30,
+        marginLeft:70,
+        marginRight:70,
         justifyContent:'center',
-        alignItems:'center'
+        alignItems:'center',
     },
     tipText:{
         color:'#FFFFFF',
@@ -82,7 +89,7 @@ const styles = StyleSheet.create({
     input:{
         marginTop:20,
         justifyContent:'center',
-        alignItems:'center',
+        alignItems:'center'
     },
    
 });

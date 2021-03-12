@@ -4,7 +4,7 @@ import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import * as Font from "expo-font";
 import OnBoarding from './src/screen/OnBoarding';
 import Otp from './src/screen/Otp'; 
-import FogetPassword from './src/screen/FogetPassword'; 
+import ForgetPassword from './src/screen/ForgetPassword'; 
 import MobileNumber from './src/screen/MobileNumber'; 
 import Login from './src/screen/Login'; 
 
@@ -31,7 +31,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      {assetsLoaded ? <Login/> : <ActivityIndicator size='small'/>}
+      {assetsLoaded ? <MobileNumber/> : <ActivityIndicator size='small'/>}
     </View>
   );
 }

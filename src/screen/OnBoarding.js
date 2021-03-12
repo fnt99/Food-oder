@@ -44,7 +44,7 @@ export class OnBoarding extends Component {
                     "Đã ăn là thích - đã thích là hết tiền"</Text>
                 </View>
                 <View style={styles.button}>
-                    <Button text='Get Start'onPress={()=>{this._btnClick()}}/>
+                    <Button text='Bắt đầu sử dụng'onPress={()=>{this._btnClick()}}/>
                 </View>
             </View>
         )
