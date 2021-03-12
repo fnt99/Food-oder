@@ -1,7 +1,11 @@
 import React,{useEffect,useState}from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 
+import {NavigationContainer} from '@react-navigation/native';
+import Navigator from './src/navigation/TabNavigator';
+
 import * as Font from "expo-font";
+
 import OnBoarding from './src/screen/OnBoarding';
 import Otp from './src/screen/Otp'; 
 import ForgetPassword from './src/screen/ForgetPassword'; 
@@ -29,10 +33,12 @@ export default function App() {
     _loadAssetsAsync();
   });
 
-  return (
-    <View style={styles.container}>
-      {assetsLoaded ? <MobileNumber/> : <ActivityIndicator size='small'/>}
-    </View>
+  return assetsLoaded? (
+  <NavigationContainer>
+    <Navigator/>
+  </NavigationContainer>
+  ) : (
+  <ActivityIndicator size='small'/>
   );
 }
 

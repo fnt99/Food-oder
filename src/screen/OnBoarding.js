@@ -41,7 +41,7 @@ export class OnBoarding extends Component {
                 </View>
                 <View style={styles.textContainer}>
                     <Text style={styles.text}>
-                    "Đã ăn là thích - đã thích là hết tiền"</Text>
+                    "Món ăn Việt - Yêu thương quay về"</Text>
                 </View>
                 <View style={styles.button}>
                     <Button text='Bắt đầu sử dụng'onPress={()=>{this._btnClick()}}/>
