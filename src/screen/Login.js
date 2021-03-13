@@ -19,7 +19,8 @@ const Login = ({
         >
         <View style={styles.darklayer}/>
         <View  style={styles.logo}>
-            <Image source={require('../../assets/images/logo.png')}/>
+            <Image style={{width:200,
+        height:200,}} source={require('../../assets/images/logo.png')}/>
         </View>
         <View style={styles.title}>
             <Text style={styles.titleText}>{title}</Text>
@@ -44,8 +45,8 @@ const Login = ({
                     </RadioButton>
                 </RadioGroup>
             </View>
-                <View style={{}}>
-                    <Text style={styles.forgotText}>Quên mật khẩu ?</Text>
+                <View>
+                    <Text style={styles.forgetText}>Quên mật khẩu ?</Text>
                 </View>
             </View>
             <View style={{marginTop:25,justifyContent:'center',alignItems:'center'}}>
@@ -74,12 +75,11 @@ const styles = StyleSheet.create({
         opacity:0.4,
     },
     logo:{
-        marginTop:70,
+        marginTop:30,
         justifyContent:'center',
         alignItems:'center',
     },
     title:{
-        marginTop:20,
         justifyContent:'center',
         alignItems:'center'
     },
@@ -118,13 +118,13 @@ const styles = StyleSheet.create({
         fontFamily:'Nunito-SemiBold',
         fontSize:12,
     },
-    forgotText:{
+    forgetText:{
         color:'#FFFFFF',
         fontFamily:'Nunito-SemiBold',
         fontSize:12,
     },
     signup:{
-        marginTop:90,
+        marginTop:60,
         justifyContent:'center',
         alignItems:'center',
     },
@@ -134,7 +134,7 @@ const styles = StyleSheet.create({
         fontSize:12
     },
     terms:{
-        marginTop:20,
+        marginTop:15,
         marginRight:80,
         marginLeft:80,
         justifyContent:'center',

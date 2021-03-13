@@ -17,7 +17,8 @@ const ForgetPassword = ({
         >
         <View style={styles.darklayer}/>
         <View  style={styles.logo}>
-            <Image source={require('../../assets/images/logo.png')}/>
+            <Image style={{width:200,
+        height:200,}} source={require('../../assets/images/logo.png')}/>
         </View>
         <View style={styles.title}>
             <Text style={styles.titleText}>{title}</Text>
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
         alignItems:'center',
     },
     title:{
-        marginTop:20,
+        marginTop:5,
         justifyContent:'center',
         alignItems:'center'
     },

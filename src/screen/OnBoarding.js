@@ -85,6 +85,10 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'center'
     },
+    logo:{
+        width:200,
+        height:200,
+    },
     textContainer:{
         width:130,
         position:'absolute',

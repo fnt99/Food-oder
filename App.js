@@ -6,11 +6,12 @@ import Navigator from './src/navigation/TabNavigator';
 
 import * as Font from "expo-font";
 
+import Login from './src/screen/Login'; 
 import OnBoarding from './src/screen/OnBoarding';
 import Otp from './src/screen/Otp'; 
 import ForgetPassword from './src/screen/ForgetPassword'; 
 import MobileNumber from './src/screen/MobileNumber'; 
-import Login from './src/screen/Login'; 
+
 
 const customFonts={
   'CircularStdBold':require('./assets/fonts/CircularStdBold.ttf'),
@@ -34,12 +35,17 @@ export default function App() {
   });
 
   return assetsLoaded? (
-  <NavigationContainer>
-    <Navigator/>
-  </NavigationContainer>
-  ) : (
-  <ActivityIndicator size='small'/>
-  );
+    <NavigationContainer>
+      <Navigator/>
+    </NavigationContainer>
+    ) : (
+    <ActivityIndicator size='small'/>
+    );
+  // return(
+  // <View style={styles.container}>
+  //   { assetsLoaded ? <Otp/> : <ActivityIndicator size='small'/>}
+  // </View>
+  // );
 }
 
 const styles = StyleSheet.create({
