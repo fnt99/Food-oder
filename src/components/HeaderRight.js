@@ -7,7 +7,7 @@ const HeaderRight = ({
     return(
     <View >   
         <TouchableOpacity  style={{marginRight:10}} onPress={onPress}>
-                <Image style={{width:25,height:25}} source={require('../../assets/images/cart.png')}/>
+                <Image style={{width:20,height:20,marginLeft:5}} source={require('../../assets/images/cart.png')}/>
         </TouchableOpacity>
     </View>
     )

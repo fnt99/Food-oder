@@ -1,12 +1,12 @@
 import React,{useLayoutEffect} from 'react';
 import { Text, View,StyleSheet,Alert } from 'react-native';
 import HeaderRight from '../../components/HeaderRight'
-import HeaderMenu from '../../components/HeaderMenu'
+import HeaderChangeLanguage from '../../components/HeaderChangeLanguage'
 const TrackScreen = ({navigation,route}) => {
     useLayoutEffect(()=>{
         navigation.setOptions({
             headerRight:()=>(<HeaderRight onPress={()=>{navigation.navigate('Ví')}}/>),
-            headerLeft:()=>(<HeaderMenu  onPress={()=>{navigation.navigate('Ví')}}/>)
+            headerLeft:()=>(<HeaderChangeLanguage/>)
         })
     })
     return(

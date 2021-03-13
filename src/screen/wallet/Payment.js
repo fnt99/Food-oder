@@ -1,13 +1,13 @@
 import React,{useLayoutEffect} from 'react';
-import { Text, View,StyleSheet } from 'react-native';
+import { Text, View,StyleSheet,Alert } from 'react-native';
 import HeaderRight from '../../components/HeaderRight'
 import Button from '../../components/Button'
-import HeaderMenu from '../../components/HeaderMenu'
+import HeaderChangeLanguage from '../../components/HeaderChangeLanguage'
 const PaymentScreen = ({navigation,route}) => {
     useLayoutEffect(()=>{
         navigation.setOptions({
             headerRight:()=>(<HeaderRight onPress={()=>{navigation.navigate('Ví')}}/>),
-            headerLeft:()=>(<HeaderMenu  onPress={()=>{navigation.navigate('Ví')}}/>)
+            headerLeft:()=>(<HeaderChangeLanguage/>)
         })
     })
     return(
