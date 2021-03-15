@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
-import FoodScreen from "../screen/food";
+import OderMethodScreen from "../screen/food/OderMethod";
 import HeaderTitle from "../components/HeaderTitle";
 const FoodStack = ({ params }) => {
   const Stack = createStackNavigator();
@@ -9,7 +9,7 @@ const FoodStack = ({ params }) => {
     <Stack.Navigator>
       <Stack.Screen
         name="Món ăn"
-        component={FoodScreen}
+        component={OderMethodScreen}
         options={{ headerTitle: (props) => <HeaderTitle /> }}
       />
     </Stack.Navigator>

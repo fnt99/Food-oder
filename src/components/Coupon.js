@@ -19,7 +19,7 @@ const Counpo = ({ icon, title, desc }) => (
 );
 const styles = StyleSheet.create({
   container: {
-    height: 70,
+    height: 80,
     marginLeft: 20,
     marginRight: 20,
     marginTop: 10,

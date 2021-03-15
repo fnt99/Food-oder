@@ -65,7 +65,7 @@ const HomeScreen = ({ navigation, route }) => {
   };
   return (
     <View style={styles.container}>
-      <View style={{ width: width, height: 175 }}>
+      <View style={{ width: width, height: 240 }}>
         <Swiper
           autoplay={true}
           dot={<View style={styles.dot} />}
@@ -115,11 +115,11 @@ const styles = StyleSheet.create({
   },
   image: {
     width: width,
-    height: 175,
+    height: 240,
   },
   slide: {
     width: width,
-    height: 175,
+    height: 240,
   },
   slide_text_wrapper: {
     position: "relative",
