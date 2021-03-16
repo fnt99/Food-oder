@@ -3,7 +3,7 @@ import { Text, View, Image, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeStack from "./HomeStack";
-import FoodStack from "./FoodStack";
+import OrderFoodStack from './OrderFoodStack'
 import FavouritesStack from "./FavouritesStack";
 import TrackStack from "./TrackStack";
 import WalletStack from "./WalletStack";
@@ -30,10 +30,10 @@ const TabNavigator = ({ params }) => {
         }}
       ></Tab.Screen>
       <Tab.Screen
-        name="Món ăn"
-        component={FoodStack}
+        name="Đặt món"
+        component={OrderFoodStack}
         options={{
-          tabBarLabel: "Món ăn",
+          tabBarLabel: "Đặt món",
           tabBarIcon: ({ focused, color, size }) => (
             <Image
               style={{ width: 25, height: 25 }}
