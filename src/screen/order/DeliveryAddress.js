@@ -47,7 +47,7 @@ const DeliveryAddress = ({ navigation, route }) => {
         key={item.id}
         style={{
           fontFamily: "Nunito-SemiBold",
-          fontSize: 10,
+          fontSize: 15,
           lineHeight: 20,
         }}
       >

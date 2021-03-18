@@ -6,6 +6,9 @@ import HeaderTitle from "../components/HeaderTitle";
 import DeliveryAddressScreen from "../screen/order/DeliveryAddress";
 import DeliveryAddressConfirmedScreen from "../screen/order/DeliveryAddressConfirmed";
 import MenuScreen from "../screen/order/Menu";
+import FoodScreen from '../screen/order/Food';
+import SelectItemScreen from '../screen/order/SelectItem'
+import ChoicesScreen from '../screen/order/Choices'
 const OderFoodStack = ({ params }) => {
   const Stack = createStackNavigator();
   return (
@@ -29,6 +32,21 @@ const OderFoodStack = ({ params }) => {
       <Stack.Screen
         name="MenuScreen"
         component={MenuScreen}
+        options={{ headerTitle: (props) => <HeaderTitle /> }}
+      />
+      <Stack.Screen
+        name="FoodScreen"
+        component={FoodScreen}
+        options={{ headerTitle: (props) => <HeaderTitle /> }}
+      />
+      <Stack.Screen
+        name="SelectItemScreen"
+        component={SelectItemScreen}
+        options={{ headerTitle: (props) => <HeaderTitle /> }}
+      />
+      <Stack.Screen
+        name="ChoicesScreen"
+        component={ChoicesScreen}
         options={{ headerTitle: (props) => <HeaderTitle /> }}
       />
     </Stack.Navigator>

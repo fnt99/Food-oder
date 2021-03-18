@@ -1,39 +1,38 @@
 import React, { useLayoutEffect, useState, useEffect } from "react";
 import { Text, View, StyleSheet, Alert } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
-import HeaderChangeLanguage from "../../components/HeaderChangeLanguage";
+import HeaderBack from "../../components/HeaderBack";
 import Background from "../../components/Background";
 import Title from "../../components/Title";
 import Cell from "../../components/Cell";
 import Button from "../../components/Button";
 
-const methods = [
+const choices = [
   {
     id: 1,
-    name: "Đặt trước",
+    name: "Cỡ lớn",
     selected: false,
     icon: require("../../../assets/images/tick.png"),
     activeIcon: require("../../../assets/images/tick-active.png"),
   },
   {
     id: 2,
-    name: "Chuyển ship",
+    name: "Trung bình",
     selected: false,
     icon: require("../../../assets/images/tick.png"),
     activeIcon: require("../../../assets/images/tick-active.png"),
   },
   {
     id: 3,
-    name: "Lái xe qua",
+    name: "Nhỏ",
     selected: false,
     icon: require("../../../assets/images/tick.png"),
     activeIcon: require("../../../assets/images/tick-active.png"),
   },
 ];
 
-const OderMethod = ({ navigation, route }) => {
-  const [data, setData] = useState(methods);
-
+const Choices = ({ navigation, route }) => {
+  const [data, setData] = useState(choices);
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
@@ -43,9 +42,16 @@ const OderMethod = ({ navigation, route }) => {
           }}
         />
       ),
-      headerLeft: () => <HeaderChangeLanguage />,
+      headerLeft: () => (
+        <HeaderBack
+          onPress={() => {
+            navigation.goBack();
+          }}
+        />
+      ),
     });
   });
+
 
   const _renderItem = (item, index) => {
     return (
@@ -78,14 +84,14 @@ const OderMethod = ({ navigation, route }) => {
     <Background>
       <View style={styles.container}>
         <Title
-          title="Phương thức đặt hàng"
-          subTitle="Xin vui lòng chọn phương thức đặt hàng !"
+          title="Lựa chọn"
+          subTitle="Xin vui lòng chọn!"
         />
         <View style={{ marginTop: 8 }}>
           <Cell data={data} renderItem={_renderItem} onPress={_onItemClick} />
         </View>
         <View style={{ marginLeft: 20, marginRight: 20, marginTop: 150 }}>
-          <Button text="Tiến hành đặt hàng" onPress={()=>{navigation.push('Đặt ship')}}/>
+          <Button text="Thêm vào giỏ hàng" onPress={()=>{Alert.alert('do some thing')}}/>
         </View>
       </View>
     </Background>
@@ -97,4 +103,4 @@ const styles = StyleSheet.create({
     flex: 1,
   },
 });
-export default OderMethod;
+export default Choices;

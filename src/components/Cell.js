@@ -24,7 +24,7 @@ const Cell = ({ style, data, renderItem, onPress, ...params }) => {
 };
 const styles = StyleSheet.create({
   container: {
-    height: 40,
+    height: 60,
     marginLeft: 25,
     marginRight: 25,
     marginTop:5,

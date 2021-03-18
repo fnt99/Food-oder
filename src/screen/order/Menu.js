@@ -4,7 +4,7 @@ import Background from "../../components/Background";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
 import Title from "../../components/TitleInOder";
-import Button from '../../components/Button'
+import Button from "../../components/Button";
 const Menu = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -86,7 +86,7 @@ const Menu = ({ navigation, route }) => {
                 color: "#000000",
                 fontFamily: "Nunito-Bold",
                 fontSize: 12,
-                lineHeight:15
+                lineHeight: 15,
               }}
             >
               {item.name}
@@ -116,8 +116,13 @@ const Menu = ({ navigation, route }) => {
             return _renderCategory(category, index);
           })}
         </View>
-        <View style={{marginLeft:20,marginRight:20,paddingTop:10}}>
-          <Button text ='Chọn thực đơn'></Button>
+        <View style={{ marginLeft: 20, marginRight: 20, paddingTop: 10 }}>
+          <Button
+            text="Chọn thực đơn"
+            onPress={() => {
+              navigation.push("FoodScreen");
+            }}
+          ></Button>
         </View>
       </View>
     </Background>
