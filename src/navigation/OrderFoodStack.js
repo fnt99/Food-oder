@@ -4,7 +4,8 @@ import { createStackNavigator } from "@react-navigation/stack";
 import OderMethodScreen from "../screen/order/OderMethod";
 import HeaderTitle from "../components/HeaderTitle";
 import DeliveryAddressScreen from "../screen/order/DeliveryAddress";
-import DeliveryAddressConfirmedScreen from "../screen/order/DeliveryAdressConfirmed";
+import DeliveryAddressConfirmedScreen from "../screen/order/DeliveryAddressConfirmed";
+import MenuScreen from "../screen/order/Menu";
 const OderFoodStack = ({ params }) => {
   const Stack = createStackNavigator();
   return (
@@ -23,6 +24,11 @@ const OderFoodStack = ({ params }) => {
       <Stack.Screen
         name="Nhập địa chi"
         component={DeliveryAddressConfirmedScreen}
+        options={{ headerTitle: (props) => <HeaderTitle /> }}
+      />
+      <Stack.Screen
+        name="MenuScreen"
+        component={MenuScreen}
         options={{ headerTitle: (props) => <HeaderTitle /> }}
       />
     </Stack.Navigator>

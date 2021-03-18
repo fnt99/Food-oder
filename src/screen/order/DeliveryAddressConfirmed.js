@@ -5,7 +5,7 @@ import Background from "../../components/Background";
 import Title from "../../components/Title";
 import Cell from "../../components/Cell";
 import Button1 from "../../components/Button";
-import Button2 from "../../components/ButtonInApp";
+import Button2 from "../../components/ButtonInOder";
 import HeaderBack from "../../components/HeaderBack";
 import GroupButton from "../../components/GroupButton";
 

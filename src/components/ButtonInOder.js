@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet, TouchableOpacity } from "react-native";
 
-const Button = ({ text, onPress, ...params }) => (
+const ButtonInOder = ({ text, onPress, ...params }) => (
   <TouchableOpacity style={styles.container} onPress={onPress}>
     <Text style={styles.text}>{text}</Text>
   </TouchableOpacity>
@@ -24,4 +24,4 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
 });
-export default Button;
+export default ButtonInOder;
