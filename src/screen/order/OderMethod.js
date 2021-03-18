@@ -84,7 +84,7 @@ const OderMethod = ({ navigation, route }) => {
         <View style={{ marginTop: 8 }}>
           <Cell data={data} renderItem={_renderItem} onPress={_onItemClick} />
         </View>
-        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 150 }}>
+        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 50}}>
           <Button text="Tiến hành đặt hàng" onPress={()=>{navigation.push('Đặt ship')}}/>
         </View>
       </View>

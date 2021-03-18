@@ -13,7 +13,7 @@ const Title = ({
 const styles = StyleSheet.create({
     title:{
         marginLeft:25,
-        marginTop:15
+        marginTop:10
     },
     subtitleText:{
         fontFamily:'Nunito-Bold',

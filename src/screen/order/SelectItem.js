@@ -31,7 +31,6 @@ const SelectItem = ({ navigation, route }) => {
     {
       id: 1,
       name: "Hamburger",
-      price: "300LKR",
       logo: require("../../../assets/images/burger-logo.png"),
       icon: require("../../../assets/images/arrow.png"),
       isNew: false,
@@ -40,7 +39,6 @@ const SelectItem = ({ navigation, route }) => {
     {
         id: 2,
         name: "Hamburger",
-        price: "300LKR",
         logo: require("../../../assets/images/burger-logo.png"),
         icon: require("../../../assets/images/arrow.png"),
         isNew: true,
@@ -94,7 +92,7 @@ const SelectItem = ({ navigation, route }) => {
       <View style={styles.container}>
       <Title title=' Humburgers' subTitle='vui lòng chọn'/>
       <View style={{marginTop:10,marginLeft:10,marginRight:10,alignContent:'center',alignItems:'center'}}>
-      <Image style={{width:width,height:200}} source={require('../../../assets/images/hamburgerfull.jpg')}/>
+      <Image style={{width:350,height:250}} source={require('../../../assets/images/hamburgerfull.jpg')}/>
       </View>
         <View style={{ paddingTop: 10 }}>
           <Cell

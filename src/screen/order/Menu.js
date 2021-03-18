@@ -139,6 +139,8 @@ const styles = StyleSheet.create({
   dateTimeView: {
     height: 70,
     backgroundColor: "#6E6E6E",
+    justifyContent:'center',
+    alignContent:'center'
   },
   category: {
     flexDirection: "row",

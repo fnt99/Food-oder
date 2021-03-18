@@ -92,7 +92,7 @@ const DeliveryAddress = ({ navigation, route }) => {
           renderItem={_renderItem}
           onPress={() => Alert.alert("a")}
         />
-        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 210 }}>
+        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 50 }}>
           <Button1
             text="Tiến hành đặt hàng"
             onPress={() => {

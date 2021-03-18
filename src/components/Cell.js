@@ -34,6 +34,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     alignContent: "center",
+    borderRadius:6
   },
   leftView: {
     marginLeft: 20,

@@ -113,7 +113,7 @@ const DeliveryAddress = ({ navigation, route }) => {
         >
         </Cell>
         <View style={{ marginLeft: 20, marginRight: 20, marginTop: 10}}>
-          <Button1 text="Tiến hành đặt hàng" onPress={() => {}} />
+          <Button1 text="Tiến hành đặt hàng" onPress={() => {navigation.push('MenuScreen')}} />
         </View>
       </View>
     </Background>

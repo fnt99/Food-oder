@@ -30,7 +30,7 @@ const Food = ({ navigation, route }) => {
     {
       id: 1,
       name: "Bánh Hamburger thịt bò",
-      price: "300LKR",
+      price: "60 nghìn vnd",
       logo: require("../../../assets/images/hamburgerbeef.jpg"),
       icon: require("../../../assets/images/arrow.png"),
       isNew: false,
@@ -38,7 +38,7 @@ const Food = ({ navigation, route }) => {
     {
         id: 2,
         name: "Bánh Hamburger gà",
-        price: "300LKR",
+        price: "50 nghìn vnd",
         logo: require("../../../assets/images/hamburgerchicken.jpg"),
         icon: require("../../../assets/images/arrow.png"),
         isNew: true,
@@ -46,7 +46,7 @@ const Food = ({ navigation, route }) => {
       {
         id: 3,
         name: "Bánh Hamburger phô mai",
-        price: "300LKR",
+        price: "40 nghìn vnd",
         logo: require("../../../assets/images/hamburgerfomai.jpg"),
         icon: require("../../../assets/images/arrow.png"),
         isNew: false,
@@ -54,7 +54,7 @@ const Food = ({ navigation, route }) => {
       {
         id: 4,
         name: "Bánh Hamburger cá hồi",
-        price: "300LKR",
+        price: "45 nghìn vnd",
         logo: require("../../../assets/images/hamburgerfish.jpg"),
         icon: require("../../../assets/images/arrow.png"),
         isNew: true,

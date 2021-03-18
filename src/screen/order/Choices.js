@@ -91,7 +91,7 @@ const Choices = ({ navigation, route }) => {
           <Cell data={data} renderItem={_renderItem} onPress={_onItemClick} />
         </View>
         <View style={{ marginLeft: 20, marginRight: 20, marginTop: 150 }}>
-          <Button text="Thêm vào giỏ hàng" onPress={()=>{Alert.alert('do some thing')}}/>
+          <Button text="Tiến hành" onPress={()=>{navigation.push('AddToCartScreen')}}/>
         </View>
       </View>
     </Background>
