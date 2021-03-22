@@ -13,7 +13,7 @@ const TitleInOder = ({
 const styles = StyleSheet.create({
     title:{
         marginLeft:25,
-        marginTop:15
+     
     },
     subtitleText:{
         fontFamily:'Nunito-Bold',
