@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
+  StatusBar
 } from "react-native";
 const { width, height } = Dimensions.get("window");
 import Input from "../components/Input";
@@ -14,10 +15,11 @@ import Button from "../components/Button";
 const title = "Quên mật khẩu";
 const tip = "Vui lòng nhập mật khẩu mới và xác nhận mật khẩu";
 
-const ForgetPassword = ({ params }) => (
+const ForgetPassword = ({ navigation }) => (
   <View style={styles.container}>
+    <StatusBar barStyle={"light-content"} />
     <ImageBackground
-      source={require("../../assets/images/background1.jpg")}
+      source={require("../../assets/images/background2.jpg")}
       style={{ width: width, height: height }}
     >
       <View style={styles.darklayer} />
@@ -35,13 +37,11 @@ const ForgetPassword = ({ params }) => (
       </View>
       <View style={styles.input}>
         <Input
-          icon={(require = "../../assets/images/lock-icon.png")}
           placeholder="Mật khẩu mới"
           password
         />
         <View style={{ paddingTop: 18 }} />
         <Input
-          icon={(require = "../../assets/images/lock-icon.png")}
           placeholder="Xác nhận mật khẩu"
           password
         />
@@ -53,7 +53,9 @@ const ForgetPassword = ({ params }) => (
           alignItems: "center",
         }}
       >
-        <Button text="Gửi đi" />
+        <Button text="Gửi đi" onPress={()=>{
+          navigation.navigate('Login')
+        }}/>
       </View>
     </ImageBackground>
   </View>

@@ -6,6 +6,8 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
+  TouchableOpacity,
+  StatusBar,
 } from "react-native";
 import { RadioGroup, RadioButton } from "react-native-flexi-radio-button";
 const { width, height } = Dimensions.get("window");
@@ -17,8 +19,9 @@ const tip = "Đăng nhập để sử dụng ";
 const signup = "Người dùng mới? Đăng ký";
 const terms =
   "Bằng cách đăng ký, bạn cho thấy rằng bạn đã đọc và đồng ý với Điều khoản dịch vụ của chúng tôi";
-const Login = ({ params }) => (
+const Login = ({ navigation }) => (
   <View style={styles.container}>
+    <StatusBar barStyle={"light-content"} />
     <ImageBackground
       source={require("../../assets/images/background1.jpg")}
       style={{ width: width, height: height }}
@@ -37,16 +40,9 @@ const Login = ({ params }) => (
         <Text style={styles.tipText}>{tip}</Text>
       </View>
       <View style={styles.input}>
-        <Input
-          icon={(require = "../../assets/images/mail-icon.png")}
-          placeholder="Nhập số điện thoại"
-        />
+        <Input placeholder="Nhập số điện thoại" />
         <View style={{ paddingTop: 18 }} />
-        <Input
-          icon={(require = "../../assets/images/lock-icon.png")}
-          placeholder="Nhập mật khẩu"
-          password
-        />
+        <Input placeholder="Nhập mật khẩu" password />
       </View>
       <View style={styles.remember}>
         <View>
@@ -56,9 +52,13 @@ const Login = ({ params }) => (
             </RadioButton>
           </RadioGroup>
         </View>
-        <View>
+        <TouchableOpacity
+          onPress={() => {
+            navigation.navigate("ForgetPassword");
+          }}
+        >
           <Text style={styles.forgetText}>Quên mật khẩu ?</Text>
-        </View>
+        </TouchableOpacity>
       </View>
       <View
         style={{
@@ -67,11 +67,18 @@ const Login = ({ params }) => (
           alignItems: "center",
         }}
       >
-        <Button text="Đăng nhập" />
+        <Button
+          text="Đăng nhập"
+          onPress={() => {
+            navigation.navigate("Home");
+          }}
+        />
       </View>
-      <View style={styles.signup}>
+      <TouchableOpacity onPress={()=>{
+        navigation.navigate('MobileNumber')
+      }} style={styles.signup}>
         <Text style={styles.signupText}>{signup}</Text>
-      </View>
+      </TouchableOpacity>
       <View style={styles.terms}>
         <Text style={styles.termsText}>{terms}</Text>
       </View>

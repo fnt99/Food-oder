@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Text, View, Image, StyleSheet, Dimensions, Alert } from "react-native";
+import { Text, View, Image, StyleSheet, Dimensions, Alert,StatusBar } from "react-native";
 import Swiper from "react-native-swiper";
 import Button from "../components/Button";
 const { width, height } = Dimensions.get("window");
@@ -18,11 +18,12 @@ export class OnBoarding extends Component {
     };
   }
   _btnClick = () => {
-    Alert.alert("Get starting...");
+    this.props.navigation.navigate('Login')
   };
   render() {
     return (
       <View style={styles.container}>
+        <StatusBar barStyle={'light-content'}/>
         <Swiper
           autoplay={true}
           dot={<View style={styles.dot} />}

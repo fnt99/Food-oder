@@ -2,7 +2,7 @@ import React, { useLayoutEffect } from "react";
 import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
 import Swiper from "react-native-swiper";
 import Carousel from "react-native-snap-carousel";
-import HeaderRight from "../../components/HeaderRight";
+import HeaderRightHome from "../../components/HeaderRightHome";
 import HeaderChangeLanguage from "../../components/HeaderChangeLanguage";
 import Coupon from "../../components/Coupon";
 
@@ -12,9 +12,9 @@ const HomeScreen = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
       headerRight: () => (
-        <HeaderRight
+        <HeaderRightHome
           onPress={() => {
-            navigation.navigate("Ví");
+            navigation.navigate("Settings");
           }}
         />
       ),

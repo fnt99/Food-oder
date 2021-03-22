@@ -15,10 +15,10 @@ const title = "Quên mật khẩu";
 const tip =
   "Để bảo mật cho bạn, mật khẩu dùng một lần đã được đặt cho tài khoản của bạn, Vui lòng nhập vào bên dưới để tiếp tục";
 
-const ForgetPassword = ({ params }) => (
+const ForgetPassword = ({ navigation }) => (
   <View style={styles.container}>
     <ImageBackground
-      source={require("../../assets/images/background1.jpg")}
+      source={require("../../assets/images/background4.png")}
       style={{ width: width, height: height }}
     >
       <View style={styles.darklayer} />
@@ -36,7 +36,6 @@ const ForgetPassword = ({ params }) => (
       </View>
       <View style={styles.input}>
         <Input
-          icon={(require = "../../assets/images/connect-icon.png")}
           placeholder="OTP"
           password
         />
@@ -48,7 +47,9 @@ const ForgetPassword = ({ params }) => (
           alignItems: "center",
         }}
       >
-        <Button text="Tiến hành" />
+        <Button text="Tiến hành" onPress={()=>{
+          navigation.navigate('Login')
+        }}  />
       </View>
     </ImageBackground>
   </View>

@@ -13,12 +13,12 @@ import Button from "../components/Button";
 
 const title = "Quên mật khẩu";
 const tip =
-  "Một tin nhắn văn bản với mã xác minh 4 chữ số vừa được gửi tới +84 xxx xxx xx91";
+  "Hãy nhập số điệm thoại của bạn";
 
-const ForgetPassword = ({ params }) => (
+const ForgetPassword = ({ navigation }) => (
   <View style={styles.container}>
     <ImageBackground
-      source={require("../../assets/images/background1.jpg")}
+      source={require("../../assets/images/background3.jpg")}
       style={{ width: width, height: height }}
     >
       <View style={styles.darklayer} />
@@ -36,8 +36,7 @@ const ForgetPassword = ({ params }) => (
       </View>
       <View style={styles.input}>
         <Input
-          icon={(require = "../../assets/images/code-icon.png")}
-          placeholder="Code"
+          placeholder="your phone number"
           password
         />
       </View>
@@ -48,7 +47,9 @@ const ForgetPassword = ({ params }) => (
           alignItems: "center",
         }}
       >
-        <Button text="Tiến hành" />
+        <Button text="Tiến hành" onPress={()=>{
+          navigation.navigate('Otp')
+        }} />
       </View>
     </ImageBackground>
   </View>
