@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState, useEffect } from "react";
-import { Text, View, StyleSheet, Alert } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
 import Background from "../../components/Background";
@@ -52,7 +52,6 @@ const Choices = ({ navigation, route }) => {
     });
   });
 
-
   const _renderItem = (item, index) => {
     return (
       <Text
@@ -82,18 +81,20 @@ const Choices = ({ navigation, route }) => {
   };
   return (
     <Background>
-      <View style={styles.container}>
-        <Title
-          title="Lựa chọn"
-          subTitle="Xin vui lòng chọn!"
-        />
+      <ScrollView style={styles.container}>
+        <Title title="Lựa chọn" subTitle="Xin vui lòng chọn!" />
         <View style={{ marginTop: 8 }}>
           <Cell data={data} renderItem={_renderItem} onPress={_onItemClick} />
         </View>
         <View style={{ marginLeft: 20, marginRight: 20, marginTop: 150 }}>
-          <Button text="Tiến hành" onPress={()=>{navigation.push('AddToCartScreen')}}/>
+          <Button
+            text="Tiến hành"
+            onPress={() => {
+              navigation.push("AddToCartScreen");
+            }}
+          />
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

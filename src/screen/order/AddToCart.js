@@ -3,10 +3,10 @@ import {
   Text,
   View,
   StyleSheet,
-  Alert,
   Image,
   Dimensions,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
@@ -119,7 +119,7 @@ const AddToCart = ({ navigation, route }) => {
   };
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Title
           title="Hambuger kẹp thịt phô mai"
           subTitle="Xin vui lòng chọn loại thịt !"
@@ -160,7 +160,7 @@ const AddToCart = ({ navigation, route }) => {
             >
               <TouchableOpacity
                 onPress={() => {
-                 count<=1?setCount(0):setCount(count-1);
+                  count <= 1 ? setCount(0) : setCount(count - 1);
                 }}
               >
                 <Image
@@ -194,7 +194,7 @@ const AddToCart = ({ navigation, route }) => {
             <Button
               text="Thêm vào giỏ hàng"
               onPress={() => {
-                navigation.push('MainItemsScreen')
+                navigation.push("MainItemsScreen");
               }}
             />
           </View>
@@ -203,7 +203,7 @@ const AddToCart = ({ navigation, route }) => {
         <View>
           <Cell data={data} renderItem={_renderItem} onPress={_onItemClick} />
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

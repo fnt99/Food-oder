@@ -1,15 +1,23 @@
-import React, { useLayoutEffect,useState } from "react";
-import { Text, View, StyleSheet ,Image,TouchableOpacity,Dimensions } from "react-native";
-import Modal from 'react-native-modal'
+import React, { useLayoutEffect, useState } from "react";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  TouchableOpacity,
+  Dimensions,
+  ScrollView,
+} from "react-native";
+import Modal from "react-native-modal";
 import Button from "../../components/ButtonAddToCart";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
 import Title from "../../components/TitleInOder";
 import Background from "../../components/Background";
 
-const {width,height}=Dimensions.get('window')
+const { width, height } = Dimensions.get("window");
 const Confirmed = ({ navigation, route }) => {
-  const [modalVisible,setModelVisible]=useState(false);
+  const [modalVisible, setModelVisible] = useState(false);
 
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -31,7 +39,7 @@ const Confirmed = ({ navigation, route }) => {
   });
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.addressView}>
           <Title
             title="Xác nhận đơn hàng"
@@ -59,36 +67,62 @@ const Confirmed = ({ navigation, route }) => {
         </View>
         <View
           style={{
-            flex:1,
+            flex: 1,
             marginLeft: 30,
             marginRight: 30,
             flexDirection: "row",
-            justifyContent: 'space-between',
-            marginTop:280
+            justifyContent: "space-between",
+            marginTop: 280,
           }}
         >
-          <Button text="Theo dõi đơn hàng" onPress={() => {navigation.navigate('Theo dõi')}}></Button>
-          <Button text="Xác nhận" onPress={() => {
-            setModelVisible(true)
-          }}></Button>
+          <Button
+            text="Theo dõi đơn hàng"
+            onPress={() => {
+              navigation.navigate("Theo dõi");
+            }}
+          ></Button>
+          <Button
+            text="Xác nhận"
+            onPress={() => {
+              setModelVisible(true);
+            }}
+          ></Button>
         </View>
-        <Modal isVisible={modalVisible} animationType='slide' transparent={true}>
+        <Modal
+          isVisible={modalVisible}
+          animationType="slide"
+          transparent={true}
+        >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-            <View style={styles.modalView2}>
-              <Image style={{width:40,height:50,marginTop:10,marginBottom:10}} source={require('../../../assets/images/boxhappy.jpg')}/>
-              <Text style={styles.modalTitle}>Chúc mừng</Text>
-              <Text style={styles.modalDesc}>Cảm ơn bạn đã sử dụng dịch vụ, bạn có cơ hội tham gia bốc thăm trúng thưởng giá trị lên tới 5 triệu đồng</Text>
-              <TouchableOpacity style={styles.modalButton} onPress={()=>{
-                setModelVisible(false)
-              }}>
-                <Text style={styles.textStyle}>Ok</Text>
-              </TouchableOpacity>
-            </View>
+              <View style={styles.modalView2}>
+                <Image
+                  style={{
+                    width: 40,
+                    height: 50,
+                    marginTop: 10,
+                    marginBottom: 10,
+                  }}
+                  source={require("../../../assets/images/boxhappy.jpg")}
+                />
+                <Text style={styles.modalTitle}>Chúc mừng</Text>
+                <Text style={styles.modalDesc}>
+                  Cảm ơn bạn đã sử dụng dịch vụ, bạn có cơ hội tham gia bốc thăm
+                  trúng thưởng giá trị lên tới 5 triệu đồng
+                </Text>
+                <TouchableOpacity
+                  style={styles.modalButton}
+                  onPress={() => {
+                    setModelVisible(false);
+                  }}
+                >
+                  <Text style={styles.textStyle}>Ok</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
         </Modal>
-      </View>
+      </ScrollView>
     </Background>
   );
 };
@@ -105,60 +139,59 @@ const styles = StyleSheet.create({
     height: 90,
     backgroundColor: "#1D2126",
   },
-  centeredView:{
-    flex:1,
-    justifyContent:'center',
-    alignItems:'center',
-    marginTop:22,
-
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    marginTop: 22,
   },
-  modalView:{
-    margin:20,
-    backgroundColor:'#FFFFFF',
-    justifyContent:'center',
-    alignItems:'center',
-    borderRadius:10,
-    shadowColor:'#000000',
-    shadowOffset:{width:0,height:2},
-    shadowOpacity:0.25,
-    shadowRadius:3.84,
-    elevation:5
+  modalView: {
+    margin: 20,
+    backgroundColor: "#FFFFFF",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    shadowColor: "#000000",
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.25,
+    shadowRadius: 3.84,
+    elevation: 5,
   },
-  modalView2:{
-    margin:20,
-    backgroundColor:'#FFFFFF',
-    justifyContent:'center',
-    alignItems:'center',
-    borderRadius:10,
-    paddingBottom:30
+  modalView2: {
+    margin: 20,
+    backgroundColor: "#FFFFFF",
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    paddingBottom: 30,
   },
-  modalTitle:{
-    color:'#000000',
-    fontFamily:'Nunito-ExtraBold',
-    fontSize:15,
-    lineHeight:18
+  modalTitle: {
+    color: "#000000",
+    fontFamily: "Nunito-ExtraBold",
+    fontSize: 15,
+    lineHeight: 18,
   },
-  modalDesc:{
-    color:'#1D2126',
-    fontFamily:'Nunito-ExtraBold',
-    fontSize:15,
-    lineHeight:18,
-    textAlign:'center'
+  modalDesc: {
+    color: "#1D2126",
+    fontFamily: "Nunito-ExtraBold",
+    fontSize: 15,
+    lineHeight: 18,
+    textAlign: "center",
   },
-  modalButton:{
-    height:48,
-    width:100,
-    justifyContent:'center',
-    alignItems:'center',
-    backgroundColor:'#FF9F1C',
-    borderRadius:10
+  modalButton: {
+    height: 48,
+    width: 100,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#FF9F1C",
+    borderRadius: 10,
   },
-  textStyle:{
-    color:'#FFFFFF',
-    fontFamily:'Nunito-ExtraBold',
-    fontSize:16,
-    lineHeight:18,
-    textAlign:'center'
+  textStyle: {
+    color: "#FFFFFF",
+    fontFamily: "Nunito-ExtraBold",
+    fontSize: 16,
+    lineHeight: 18,
+    textAlign: "center",
   },
 });
 export default Confirmed;

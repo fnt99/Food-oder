@@ -1,5 +1,14 @@
 import React, { Component } from "react";
-import { Text, View, Image, StyleSheet, Dimensions, Alert,StatusBar } from "react-native";
+import {
+  ScrollView,
+  Text,
+  View,
+  Image,
+  StyleSheet,
+  Dimensions,
+  Alert,
+  StatusBar,
+} from "react-native";
 import Swiper from "react-native-swiper";
 import Button from "../components/Button";
 const { width, height } = Dimensions.get("window");
@@ -18,12 +27,12 @@ export class OnBoarding extends Component {
     };
   }
   _btnClick = () => {
-    this.props.navigation.navigate('Login')
+    this.props.navigation.navigate("Login");
   };
   render() {
     return (
-      <View style={styles.container}>
-        <StatusBar barStyle={'light-content'}/>
+      <ScrollView style={styles.container}>
+        <StatusBar barStyle={"light-content"} />
         <Swiper
           autoplay={true}
           dot={<View style={styles.dot} />}
@@ -55,7 +64,7 @@ export class OnBoarding extends Component {
             }}
           />
         </View>
-      </View>
+      </ScrollView>
     );
   }
 }

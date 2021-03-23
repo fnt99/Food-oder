@@ -1,5 +1,12 @@
 import React, { useLayoutEffect } from "react";
-import { Text, View, StyleSheet, Image, Dimensions } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  Dimensions,
+  ScrollView,
+} from "react-native";
 import Swiper from "react-native-swiper";
 import Carousel from "react-native-snap-carousel";
 import HeaderRightHome from "../../components/HeaderRightHome";
@@ -34,13 +41,12 @@ const HomeScreen = ({ navigation, route }) => {
       id: 1,
       icon: require("../../../assets/images/logo.png"),
       title: "Đặt hàng tại đây",
-      desc: "Đăng nhập để tiếp tục",
+
     },
     {
       id: 2,
       icon: require("../../../assets/images/logo.png"),
       title: "Theo dõi tại đây",
-      desc: "Đăng nhập để tiếp tục",
     },
   ];
   const offers = [
@@ -59,12 +65,16 @@ const HomeScreen = ({ navigation, route }) => {
   const _renderItem = ({ item, index }) => {
     return (
       <View>
-        <Image style ={{width:100,height:125,borderRadius:8}}key={item.id} source={item.image} />
+        <Image
+          style={{ width: 100, height: 125, borderRadius: 8 }}
+          key={item.id}
+          source={item.image}
+        />
       </View>
     );
   };
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={{ width: width, height: 240 }}>
         <Swiper
           autoplay={true}
@@ -96,7 +106,9 @@ const HomeScreen = ({ navigation, route }) => {
         })}
       </View>
       <View style={{ marginTop: 5, marginLeft: 20 }}>
-        <Text style={{ fontFamily: "Nunito-Bold", fontSize: 20 }}>Người dùng đề xuất</Text>
+        <Text style={{ fontFamily: "Nunito-Bold", fontSize: 20 }}>
+          Người dùng đề xuất
+        </Text>
         <Carousel
           firstItem={1}
           data={offers}
@@ -105,7 +117,7 @@ const HomeScreen = ({ navigation, route }) => {
           itemWidth={100}
         ></Carousel>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

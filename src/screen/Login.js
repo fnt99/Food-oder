@@ -8,6 +8,7 @@ import {
   Dimensions,
   TouchableOpacity,
   StatusBar,
+  ScrollView,
 } from "react-native";
 import { RadioGroup, RadioButton } from "react-native-flexi-radio-button";
 const { width, height } = Dimensions.get("window");
@@ -20,7 +21,7 @@ const signup = "Người dùng mới? Đăng ký";
 const terms =
   "Bằng cách đăng ký, bạn cho thấy rằng bạn đã đọc và đồng ý với Điều khoản dịch vụ của chúng tôi";
 const Login = ({ navigation }) => (
-  <View style={styles.container}>
+  <ScrollView style={styles.container}>
     <StatusBar barStyle={"light-content"} />
     <ImageBackground
       source={require("../../assets/images/background1.jpg")}
@@ -74,16 +75,19 @@ const Login = ({ navigation }) => (
           }}
         />
       </View>
-      <TouchableOpacity onPress={()=>{
-        navigation.navigate('MobileNumber')
-      }} style={styles.signup}>
+      <TouchableOpacity
+        onPress={() => {
+          navigation.navigate("MobileNumber");
+        }}
+        style={styles.signup}
+      >
         <Text style={styles.signupText}>{signup}</Text>
       </TouchableOpacity>
       <View style={styles.terms}>
         <Text style={styles.termsText}>{terms}</Text>
       </View>
     </ImageBackground>
-  </View>
+  </ScrollView>
 );
 const styles = StyleSheet.create({
   container: {

@@ -6,6 +6,7 @@ import {
   StyleSheet,
   ImageBackground,
   Dimensions,
+  ScrollView,
 } from "react-native";
 const { width, height } = Dimensions.get("window");
 import Input from "../components/Input";
@@ -16,7 +17,7 @@ const tip =
   "Để bảo mật cho bạn, mật khẩu dùng một lần đã được đặt cho tài khoản của bạn, Vui lòng nhập vào bên dưới để tiếp tục";
 
 const ForgetPassword = ({ navigation }) => (
-  <View style={styles.container}>
+  <ScrollView style={styles.container}>
     <ImageBackground
       source={require("../../assets/images/background4.png")}
       style={{ width: width, height: height }}
@@ -35,10 +36,7 @@ const ForgetPassword = ({ navigation }) => (
         <Text style={styles.tipText}>{tip}</Text>
       </View>
       <View style={styles.input}>
-        <Input
-          placeholder="OTP"
-          password
-        />
+        <Input placeholder="OTP" password />
       </View>
       <View
         style={{
@@ -47,12 +45,15 @@ const ForgetPassword = ({ navigation }) => (
           alignItems: "center",
         }}
       >
-        <Button text="Tiến hành" onPress={()=>{
-          navigation.navigate('Login')
-        }}  />
+        <Button
+          text="Tiến hành"
+          onPress={() => {
+            navigation.navigate("Login");
+          }}
+        />
       </View>
     </ImageBackground>
-  </View>
+  </ScrollView>
 );
 const styles = StyleSheet.create({
   container: {

@@ -1,5 +1,12 @@
 import React, { useLayoutEffect } from "react";
-import { Text, View, StyleSheet, Image, ImageBackground ,Dimensions} from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  ScrollView,
+  Dimensions,
+} from "react-native";
 import Background from "../../components/Background";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
@@ -34,16 +41,16 @@ const SelectItem = ({ navigation, route }) => {
       logo: require("../../../assets/images/burger-logo.png"),
       icon: require("../../../assets/images/arrow.png"),
       isNew: false,
-      category:'Ala Carte'
+      category: "Ala Carte",
     },
     {
-        id: 2,
-        name: "Hamburger",
-        logo: require("../../../assets/images/burger-logo.png"),
-        icon: require("../../../assets/images/arrow.png"),
-        isNew: true,
-        category:'Ala Carte'
-      }
+      id: 2,
+      name: "Hamburger",
+      logo: require("../../../assets/images/burger-logo.png"),
+      icon: require("../../../assets/images/arrow.png"),
+      isNew: true,
+      category: "Ala Carte",
+    },
   ];
 
   const _renderItem = (item, index) => {
@@ -85,15 +92,26 @@ const SelectItem = ({ navigation, route }) => {
     );
   };
   const _onItemClick = (item, index) => {
-      navigation.push('ChoicesScreen')
+    navigation.push("ChoicesScreen");
   };
   return (
     <Background>
-      <View style={styles.container}>
-      <Title title=' Humburgers' subTitle='vui lòng chọn'/>
-      <View style={{marginTop:10,marginLeft:10,marginRight:10,alignContent:'center',alignItems:'center'}}>
-      <Image style={{width:350,height:250}} source={require('../../../assets/images/hamburgerfull.jpg')}/>
-      </View>
+      <ScrollView style={styles.container}>
+        <Title title=" Humburgers" subTitle="vui lòng chọn" />
+        <View
+          style={{
+            marginTop: 10,
+            marginLeft: 10,
+            marginRight: 10,
+            alignContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Image
+            style={{ width: 350, height: 250 }}
+            source={require("../../../assets/images/hamburgerfull.jpg")}
+          />
+        </View>
         <View style={{ paddingTop: 10 }}>
           <Cell
             style={{ height: 85 }}
@@ -102,7 +120,7 @@ const SelectItem = ({ navigation, route }) => {
             onPress={_onItemClick}
           ></Cell>
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

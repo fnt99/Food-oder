@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState, useEffect } from "react";
-import { Text, View, StyleSheet, Alert } from "react-native";
+import { Text, View, StyleSheet, ScrollView } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderChangeLanguage from "../../components/HeaderChangeLanguage";
 import Background from "../../components/Background";
@@ -76,7 +76,7 @@ const OderMethod = ({ navigation, route }) => {
   };
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Title
           title="Phương thức đặt hàng"
           subTitle="Xin vui lòng chọn phương thức đặt hàng !"
@@ -84,10 +84,15 @@ const OderMethod = ({ navigation, route }) => {
         <View style={{ marginTop: 8 }}>
           <Cell data={data} renderItem={_renderItem} onPress={_onItemClick} />
         </View>
-        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 50}}>
-          <Button text="Tiến hành đặt hàng" onPress={()=>{navigation.push('Đặt ship')}}/>
+        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 50 }}>
+          <Button
+            text="Tiến hành đặt hàng"
+            onPress={() => {
+              navigation.push("Đặt ship");
+            }}
+          />
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

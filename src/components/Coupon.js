@@ -8,7 +8,7 @@ const Counpo = ({ icon, title, desc }) => (
       <View style={styles.left_circle}></View>
       <View style={styles.content}>
         <Image source={icon} style={{ width: 70, height: 70 }} />
-        <View style={{ marginLeft: 10,paddingTop:11 }}>
+        <View style={{ marginLeft: 10, paddingTop: 11 }}>
           <Text style={styles.title}>{title}</Text>
           <Text style={styles.desc}>{desc}</Text>
         </View>

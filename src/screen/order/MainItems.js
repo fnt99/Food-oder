@@ -7,6 +7,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
@@ -15,7 +16,7 @@ import Title from "../../components/Title";
 import Cell from "../../components/Cell";
 import Button from "../../components/Button";
 const { width, height } = Dimensions.get("window");
-import Card from "../../components/Card"
+import Card from "../../components/Card";
 const includes = [
   {
     id: 1,
@@ -23,14 +24,13 @@ const includes = [
   },
 ];
 const condiments = [
-    {
-      id: 1,
-      name: "Lựa chọn thông dụng",
-    },
-  ];
+  {
+    id: 1,
+    name: "Lựa chọn thông dụng",
+  },
+];
 
 const MainItems = ({ navigation, route }) => {
-
   const [count, setCount] = useState(1);
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -98,7 +98,7 @@ const MainItems = ({ navigation, route }) => {
   };
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.totalView}>
           <View style={styles.textView}>
             <Text style={styles.totalText}>Có(1 đơn hàng)</Text>
@@ -106,21 +106,32 @@ const MainItems = ({ navigation, route }) => {
           </View>
         </View>
 
-        <Card/>
+        <Card />
         <Title title="Khuyến mãi" />
         <View>
-          <Cell data={includes} renderItem={_renderItem} onPress={_onItemClick} />
+          <Cell
+            data={includes}
+            renderItem={_renderItem}
+            onPress={_onItemClick}
+          />
         </View>
         <Title title="Lựa chọn" />
         <View>
-          <Cell data={condiments} renderItem={_renderItem} onPress={_onItemClick} />
+          <Cell
+            data={condiments}
+            renderItem={_renderItem}
+            onPress={_onItemClick}
+          />
         </View>
-        <View style={{marginLeft:20,marginRight:20,marginTop:20}}>
-            <Button text='Thanh toán' onPress={()=>{
-                navigation.push('FullItemsScreen')
-            }}/>
+        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 20 }}>
+          <Button
+            text="Thanh toán"
+            onPress={() => {
+              navigation.push("FullItemsScreen");
+            }}
+          />
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };
@@ -129,30 +140,28 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
-  totalView:{
-    height:90,
-    backgroundColor:'#585858',
-    justifyContent:'center',
- 
-},
-  textView:{
-    flexDirection:'row',
-    justifyContent:'space-between',
-    marginRight:20,
-    marginLeft:20,
+  totalView: {
+    height: 90,
+    backgroundColor: "#585858",
+    justifyContent: "center",
   },
-  totalText:{
-    color:'#FFFFFF',
-    fontFamily:'Nunito-Bold',
-    fontSize:20,
-    lineHeight:24,
+  textView: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    marginRight: 20,
+    marginLeft: 20,
   },
-  priceText:{
-    color:'#FF9F1C',
-    fontFamily:'Nunito-Bold',
-    fontSize:15,
-    lineHeight:20,
-  }
-
+  totalText: {
+    color: "#FFFFFF",
+    fontFamily: "Nunito-Bold",
+    fontSize: 20,
+    lineHeight: 24,
+  },
+  priceText: {
+    color: "#FF9F1C",
+    fontFamily: "Nunito-Bold",
+    fontSize: 15,
+    lineHeight: 20,
+  },
 });
 export default MainItems;

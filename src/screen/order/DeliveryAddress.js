@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState, useEffect } from "react";
-import { Text, View, StyleSheet, Alert } from "react-native";
+import { Text, View, StyleSheet, Alert, ScrollView } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import Background from "../../components/Background";
 import Title from "../../components/Title";
@@ -78,12 +78,14 @@ const DeliveryAddress = ({ navigation, route }) => {
     {
       activated: false,
       text: "Đặt hàng trước",
-      onPress: () => {navigation.push('Nhập địa chi')},
+      onPress: () => {
+        navigation.push("Nhập địa chi");
+      },
     },
   ];
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Title subTitle="Để hoàn thành xin bạn hãy nhập chi tiết thông tin dưới này!" />
         <GroupButton activeColor="#FF9F1C" buttons={buttons} />
         <Title title="Địa chỉ ship hàng"></Title>
@@ -96,18 +98,18 @@ const DeliveryAddress = ({ navigation, route }) => {
           <Button1
             text="Tiến hành đặt hàng"
             onPress={() => {
-             navigation.push('MenuScreen')
+              navigation.push("MenuScreen");
             }}
           />
         </View>
-        <View style={{ marginLeft: 20, marginRight: 20,marginTop:10 }}>
-        <Button2
+        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 10 }}>
+          <Button2
             text="Thay đổi địa chỉ"
-            style={{backgroundColor :'#000000'}}
+            style={{ backgroundColor: "#000000" }}
             onPress={() => {}}
           />
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { Text, View, StyleSheet, Image } from "react-native";
+import { Text, View, StyleSheet, Image, ScrollView } from "react-native";
 import Background from "../../components/Background";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
@@ -98,7 +98,7 @@ const Menu = ({ navigation, route }) => {
   };
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <View style={styles.addressView}>
           <Title
             title="Địa chỉ giao hàng"
@@ -124,7 +124,7 @@ const Menu = ({ navigation, route }) => {
             }}
           ></Button>
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };
@@ -139,8 +139,8 @@ const styles = StyleSheet.create({
   dateTimeView: {
     height: 70,
     backgroundColor: "#6E6E6E",
-    justifyContent:'center',
-    alignContent:'center'
+    justifyContent: "center",
+    alignContent: "center",
   },
   category: {
     flexDirection: "row",

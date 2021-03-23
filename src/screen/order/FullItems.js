@@ -7,7 +7,7 @@ import {
   Image,
   Dimensions,
   TouchableOpacity,
-  ScrollView
+  ScrollView,
 } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
@@ -123,40 +123,50 @@ const FullItems = ({ navigation, route }) => {
           <View style={{ margin: 20 }}>
             <View style={styles.itemView}>
               <Text style={styles.itemText}>Tổng chi phí</Text>
-              <Text style={[styles.priceText,{fontSize:18}]}>67,500 VND</Text>
+              <Text style={[styles.priceText, { fontSize: 18 }]}>
+                67,500 VND
+              </Text>
             </View>
-            <View style={{alignItems:'flex-end'}}>
-                <Text style={[styles.itemText.color,{color:'#FFFFFF',fontSize:12}]}>Đã bao gồm VAT</Text>
+            <View style={{ alignItems: "flex-end" }}>
+              <Text
+                style={[
+                  styles.itemText.color,
+                  { color: "#FFFFFF", fontSize: 12 },
+                ]}
+              >
+                Đã bao gồm VAT
+              </Text>
             </View>
           </View>
         </View>
-        <View style={{paddingTop:10}}></View>
+        <View style={{ paddingTop: 10 }}></View>
         <View style={styles.addressView}>
-            <View style={{margin:20}}>
-                <Text style={styles.title}>Giao hàng tới</Text>
-                <Text style={[styles.itemText,{fontSize:15}]}>16/02/2021 16:38:02</Text>
-                <Text style={[styles.itemText,{color:'#FFFFFF',fontSize:15}]}>No1. Số nhà 39 ,Ngõ 199 Hồ Tùng Mậu</Text>
-            </View>
+          <View style={{ margin: 20 }}>
+            <Text style={styles.title}>Giao hàng tới</Text>
+            <Text style={[styles.itemText, { fontSize: 15 }]}>
+              16/02/2021 16:38:02
+            </Text>
+            <Text style={[styles.itemText, { color: "#FFFFFF", fontSize: 15 }]}>
+              No1. Số nhà 39 ,Ngõ 199 Hồ Tùng Mậu
+            </Text>
+          </View>
         </View>
-        <Title title='Nhận xét'/>
-        <View style={{marginTop:8}}>
-            <Cell
-                data={remarks}
-                renderItem={_renderItem}
-                onPress ={_onItemClick}
-            />
+        <Title title="Nhận xét" />
+        <View style={{ marginTop: 8 }}>
+          <Cell
+            data={remarks}
+            renderItem={_renderItem}
+            onPress={_onItemClick}
+          />
         </View>
         <Card />
-        <Title title='Lựa chọn'/>
-        <View style={{marginTop:8}}>
-            <Cell
-                data={condiments}
-                renderItem={_renderItem}
-                onPress ={_onItemClick}
-            />
-        </View>
         <View style={{ marginLeft: 20, marginRight: 20, marginTop: 20 }}>
-          <Button text="Thanh toán" onPress={()=>{navigation.navigate('Ví')}}/>
+          <Button
+            text="Thanh toán"
+            onPress={() => {
+              navigation.navigate("Ví");
+            }}
+          />
         </View>
       </ScrollView>
     </Background>
@@ -215,10 +225,10 @@ const styles = StyleSheet.create({
     fontSize: 15,
     lineHeight: 20,
   },
-  addressView:{
-      height:90,
-      backgroundColor:'#585858',
-      justifyContent:'center'
-  }
+  addressView: {
+    height: 90,
+    backgroundColor: "#585858",
+    justifyContent: "center",
+  },
 });
 export default FullItems;

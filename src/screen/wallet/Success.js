@@ -1,5 +1,5 @@
 import React, { useLayoutEffect } from "react";
-import { Text, View, StyleSheet, Alert } from "react-native";
+import { Text, View, StyleSheet, Alert, ScrollView } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
 
@@ -23,7 +23,7 @@ const SuccessScreen = ({ navigation, route }) => {
     });
   });
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View
         style={{
           width: 250,
@@ -35,7 +35,7 @@ const SuccessScreen = ({ navigation, route }) => {
       >
         <Text style={{ color: "#FFA07A", fontSize: 22 }}>Succes Screen</Text>
       </View>
-    </View>
+    </ScrollView>
   );
 };
 

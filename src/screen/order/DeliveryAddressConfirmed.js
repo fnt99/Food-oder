@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState, useEffect } from "react";
-import { Text, View, StyleSheet, Alert } from "react-native";
+import { Text, View, StyleSheet, Alert, ScrollView } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import Background from "../../components/Background";
 import Title from "../../components/Title";
@@ -80,7 +80,9 @@ const DeliveryAddress = ({ navigation, route }) => {
     {
       activated: false,
       text: "Đặt ngay",
-      onPress: () => {navigation.push('Đặt ship')},
+      onPress: () => {
+        navigation.push("Đặt ship");
+      },
     },
     {
       activated: true,
@@ -90,7 +92,7 @@ const DeliveryAddress = ({ navigation, route }) => {
   ];
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Title subTitle="Hãy nhập chi tiết thông tin dưới này!" />
         <GroupButton activeColor="#FF9F1C" buttons={buttons} />
         <Title title="Địa chỉ ship hàng"></Title>
@@ -107,15 +109,19 @@ const DeliveryAddress = ({ navigation, route }) => {
           subTitle="Hãy chọn thời gian giao hàng"
         ></Title>
         <Cell
-        data={dateTime}
-        renderItem={_renderItem}
-        onPress={() => Alert.alert("a")}
-        >
-        </Cell>
-        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 10}}>
-          <Button1 text="Tiến hành đặt hàng" onPress={() => {navigation.push('MenuScreen')}} />
+          data={dateTime}
+          renderItem={_renderItem}
+          onPress={() => Alert.alert("a")}
+        ></Cell>
+        <View style={{ marginLeft: 20, marginRight: 20, marginTop: 10 }}>
+          <Button1
+            text="Tiến hành đặt hàng"
+            onPress={() => {
+              navigation.push("MenuScreen");
+            }}
+          />
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

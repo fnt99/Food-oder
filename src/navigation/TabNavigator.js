@@ -3,7 +3,7 @@ import { Text, View, Image, StyleSheet } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from "react-native-vector-icons/Ionicons";
 import HomeStack from "./HomeStack";
-import OrderFoodStack from './OrderFoodStack'
+import OrderFoodStack from "./OrderFoodStack";
 import FavouritesStack from "./FavouritesStack";
 import TrackStack from "./TrackStack";
 import WalletStack from "./WalletStack";

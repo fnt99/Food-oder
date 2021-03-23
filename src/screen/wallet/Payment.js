@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useState, useEffect } from "react";
-import { Text, View, StyleSheet, Alert } from "react-native";
+import { Text, View, StyleSheet, Alert, ScrollView } from "react-native";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
 import Background from "../../components/Background";
@@ -89,7 +89,7 @@ const PaymentScreen = ({ navigation, route }) => {
   };
   return (
     <Background>
-      <View style={styles.container}>
+      <ScrollView style={styles.container}>
         <Title
           title="Thanh toán đơn hàng"
           subTitle="Xin vui lòng chọn phương thức thanh toán!"
@@ -98,9 +98,14 @@ const PaymentScreen = ({ navigation, route }) => {
           <Cell data={data} renderItem={_renderItem} onPress={_onItemClick} />
         </View>
         <View style={{ marginLeft: 20, marginRight: 20, marginTop: 100 }}>
-          <Button text="Tiến hành thanh toán" onPress={()=>{navigation.push('Xác nhận')}}/>
+          <Button
+            text="Tiến hành thanh toán"
+            onPress={() => {
+              navigation.push("Xác nhận");
+            }}
+          />
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

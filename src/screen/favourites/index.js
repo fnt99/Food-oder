@@ -1,11 +1,21 @@
 import React, { useLayoutEffect } from "react";
-import { Text, View, StyleSheet, Image, ImageBackground } from "react-native";
+import {
+  ScrollView,
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  ImageBackground,
+  Dimensions,
+} from "react-native";
 import Background from "../../components/Background";
+import Swiper from "react-native-swiper";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
 import Title from "../../components/TitleInOder";
 import Button from "../../components/Button";
 import Cell from "../../components/Cell";
+const { width, height } = Dimensions.get("window");
 const FavouritesScreen = ({ navigation, route }) => {
   useLayoutEffect(() => {
     navigation.setOptions({
@@ -25,7 +35,12 @@ const FavouritesScreen = ({ navigation, route }) => {
       ),
     });
   });
-
+  const slides = [
+    { id: 1, image: require("../../../assets/images/slider-image1.jpg") },
+    { id: 2, image: require("../../../assets/images/slider-image2.jpg") },
+    { id: 3, image: require("../../../assets/images/slider-image3.jpg") },
+    { id: 4, image: require("../../../assets/images/slider-image4.png") },
+  ];
   const foods = [
     {
       id: 1,
@@ -36,29 +51,29 @@ const FavouritesScreen = ({ navigation, route }) => {
       isNew: false,
     },
     {
-        id: 2,
-        name: "Bánh Hamburger gà",
-        price: "50 nghìn vnd",
-        logo: require("../../../assets/images/hamburgerchicken.jpg"),
-        icon: require("../../../assets/images/arrow.png"),
-        isNew: true,
-      },
-      {
-        id: 3,
-        name: "Bánh Hamburger phô mai",
-        price: "40 nghìn vnd",
-        logo: require("../../../assets/images/hamburgerfomai.jpg"),
-        icon: require("../../../assets/images/arrow.png"),
-        isNew: false,
-      },
-      {
-        id: 4,
-        name: "Bánh Hamburger cá hồi",
-        price: "45 nghìn vnd",
-        logo: require("../../../assets/images/hamburgerfish.jpg"),
-        icon: require("../../../assets/images/arrow.png"),
-        isNew: true,
-      },
+      id: 2,
+      name: "Bánh Hamburger gà",
+      price: "50 nghìn vnd",
+      logo: require("../../../assets/images/hamburgerchicken.jpg"),
+      icon: require("../../../assets/images/arrow.png"),
+      isNew: true,
+    },
+    {
+      id: 3,
+      name: "Bánh Hamburger phô mai",
+      price: "40 nghìn vnd",
+      logo: require("../../../assets/images/hamburgerfomai.jpg"),
+      icon: require("../../../assets/images/arrow.png"),
+      isNew: false,
+    },
+    {
+      id: 4,
+      name: "Bánh Hamburger cá hồi",
+      price: "45 nghìn vnd",
+      logo: require("../../../assets/images/hamburgerfish.jpg"),
+      icon: require("../../../assets/images/arrow.png"),
+      isNew: true,
+    },
   ];
 
   const _renderItem = (item, index) => {
@@ -81,10 +96,14 @@ const FavouritesScreen = ({ navigation, route }) => {
             }}
             source={item.logo}
           >
-            {item.isNew?<Image
-              style={{ width: 20, height: 20 }}
-              source={require("../../../assets/images/new.png")}
-            />:<View/>}
+            {item.isNew ? (
+              <Image
+                style={{ width: 20, height: 20 }}
+                source={require("../../../assets/images/new.png")}
+              />
+            ) : (
+              <View />
+            )}
           </ImageBackground>
         </View>
 
@@ -117,12 +136,11 @@ const FavouritesScreen = ({ navigation, route }) => {
     );
   };
   const _onItemClick = (item, index) => {
-      navigation.push('SelectItemScreen')
+    navigation.push("SelectItemScreen");
   };
   return (
     <Background>
-      <View style={styles.container}>
-          
+      <ScrollView style={styles.container}>
         <View style={{ paddingTop: 10 }}>
           <Cell
             style={{ height: 85 }}
@@ -131,6 +149,17 @@ const FavouritesScreen = ({ navigation, route }) => {
             onPress={_onItemClick}
           ></Cell>
         </View>
+      </ScrollView>
+      <View style={styles.slideswiper}>
+        <Swiper autoplay={true}>
+          {slides.map((slide) => {
+            return (
+              <View style={styles.slide}>
+                <Image source={slide.image} style={styles.image} />
+              </View>
+            );
+          })}
+        </Swiper>
       </View>
     </Background>
   );
@@ -138,6 +167,18 @@ const FavouritesScreen = ({ navigation, route }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  slide: {
+    width: 400,
+    height: 200,
+  },
+  image: {
+    width: 400,
+    height: 200,
+  },
+  slideswiper: {
+    width: 400,
+    height: 210,
   },
 });
 export default FavouritesScreen;

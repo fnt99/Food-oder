@@ -1,5 +1,12 @@
 import React, { useLayoutEffect } from "react";
-import { Text, View, StyleSheet, Image, ImageBackground } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  Image,
+  ImageBackground,
+  ScrollView,
+} from "react-native";
 import Background from "../../components/Background";
 import HeaderRight from "../../components/HeaderRight";
 import HeaderBack from "../../components/HeaderBack";
@@ -36,29 +43,29 @@ const Food = ({ navigation, route }) => {
       isNew: false,
     },
     {
-        id: 2,
-        name: "Bánh Hamburger gà",
-        price: "50 nghìn vnd",
-        logo: require("../../../assets/images/hamburgerchicken.jpg"),
-        icon: require("../../../assets/images/arrow.png"),
-        isNew: true,
-      },
-      {
-        id: 3,
-        name: "Bánh Hamburger phô mai",
-        price: "40 nghìn vnd",
-        logo: require("../../../assets/images/hamburgerfomai.jpg"),
-        icon: require("../../../assets/images/arrow.png"),
-        isNew: false,
-      },
-      {
-        id: 4,
-        name: "Bánh Hamburger cá hồi",
-        price: "45 nghìn vnd",
-        logo: require("../../../assets/images/hamburgerfish.jpg"),
-        icon: require("../../../assets/images/arrow.png"),
-        isNew: true,
-      },
+      id: 2,
+      name: "Bánh Hamburger gà",
+      price: "50 nghìn vnd",
+      logo: require("../../../assets/images/hamburgerchicken.jpg"),
+      icon: require("../../../assets/images/arrow.png"),
+      isNew: true,
+    },
+    {
+      id: 3,
+      name: "Bánh Hamburger phô mai",
+      price: "40 nghìn vnd",
+      logo: require("../../../assets/images/hamburgerfomai.jpg"),
+      icon: require("../../../assets/images/arrow.png"),
+      isNew: false,
+    },
+    {
+      id: 4,
+      name: "Bánh Hamburger cá hồi",
+      price: "45 nghìn vnd",
+      logo: require("../../../assets/images/hamburgerfish.jpg"),
+      icon: require("../../../assets/images/arrow.png"),
+      isNew: true,
+    },
   ];
 
   const _renderItem = (item, index) => {
@@ -81,10 +88,14 @@ const Food = ({ navigation, route }) => {
             }}
             source={item.logo}
           >
-            {item.isNew?<Image
-              style={{ width: 20, height: 20 }}
-              source={require("../../../assets/images/new.png")}
-            />:<View/>}
+            {item.isNew ? (
+              <Image
+                style={{ width: 20, height: 20 }}
+                source={require("../../../assets/images/new.png")}
+              />
+            ) : (
+              <View />
+            )}
           </ImageBackground>
         </View>
 
@@ -117,12 +128,11 @@ const Food = ({ navigation, route }) => {
     );
   };
   const _onItemClick = (item, index) => {
-      navigation.push('SelectItemScreen')
+    navigation.push("SelectItemScreen");
   };
   return (
     <Background>
-      <View style={styles.container}>
-          
+      <ScrollView style={styles.container}>
         <View style={{ paddingTop: 10 }}>
           <Cell
             style={{ height: 85 }}
@@ -131,7 +141,7 @@ const Food = ({ navigation, route }) => {
             onPress={_onItemClick}
           ></Cell>
         </View>
-      </View>
+      </ScrollView>
     </Background>
   );
 };

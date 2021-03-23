@@ -3,7 +3,7 @@ import { Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import FavouritesScreen from "../screen/favourites";
 import HeaderTitle from "../components/HeaderTitle";
-import SelectItemScreen from '../screen/order/SelectItem';
+import SelectItemScreen from "../screen/order/SelectItem";
 const FavouritesStack = ({ params }) => {
   const Stack = createStackNavigator();
   return (
